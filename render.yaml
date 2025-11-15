@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: hunterprice-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn bot:app
+    envVars:
+      - key: RENDER
+        value: true
